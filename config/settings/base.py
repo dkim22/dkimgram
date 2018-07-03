@@ -67,6 +67,8 @@ THIRD_PARTY_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'rest_framework',
+    'taggit',
+    'taggit_serializer',
 ]
 LOCAL_APPS = [
     'dkimgram.users.apps.UsersConfig',
@@ -238,3 +240,4 @@ SOCIALACCOUNT_ADAPTER = 'dkimgram.users.adapters.SocialAccountAdapter'
 
 # Your stuff...
 # ------------------------------------------------------------------------------
+TAGGIT_CASE_INSENSITIVE = True

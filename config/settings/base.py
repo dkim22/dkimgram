@@ -73,6 +73,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'dkimgram.users.apps.UsersConfig',
     'dkimgram.images.apps.ImagesConfig',
+    'dkimgram.notifications.apps.NotificationsConfig'
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps

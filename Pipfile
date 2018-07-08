@@ -38,6 +38,7 @@ djangorestframework = "==3.6.3"
 djangorestframework-jwt = "*"
 pyjwt = "*"
 django-rest-auth = "*"
+django-cors-headers = "*"
 
 
 [dev-packages]

@@ -1,6 +1,8 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { createBrowserHistory } from "history";
 import { connectRouter, routerMiddleware } from "connected-react-router";
+import { i18nState } from "redux-i18n";
+import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import users from "redux/modules/users";
 
@@ -17,10 +19,18 @@ if (env === "development") {
 
 const reducer = combineReducers({
   users,
-  router: connectRouter(history)
+  router: connectRouter(history),
+  i18nState
 });
 
-let store = initialState => createStore(reducer, applyMiddleware(...middlewares));
+let store;
+
+if (env === "development") {
+  store = initialState =>
+    createStore(reducer, composeWithDevTools(applyMiddleware(...middlewares)));
+} else {
+  store = initialState => createStore(reducer, applyMiddleware(...middlewares));
+}
 
 export { history };
 
